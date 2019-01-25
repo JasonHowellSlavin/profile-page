@@ -1,5 +1,7 @@
 import _ from 'lodash';
 import '../scss/style.scss';
+import gif from '../media/mind_blown.gif';
+import printMe from './print.js';
 
 function component() {
   let element = document.createElement('div');
@@ -11,7 +13,16 @@ function component() {
   newElement.innerHTML = 'Jason was here';
   newElement.classList.add('jason');
 
+  let myGif = new Image();
+  myGif.src = gif;
+
+  let btn = document.createElement('button');
+  btn.innerHTML = 'Click Me';
+  btn.onclick = printMe;
+
   element.appendChild(newElement);
+  element.appendChild(myGif);
+  element.appendChild(btn);
 
   return element;
 }
